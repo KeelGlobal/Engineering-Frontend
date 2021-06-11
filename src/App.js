@@ -1,7 +1,11 @@
-import './App.css';
+import SignIn from './Components/SignIn-2/SignIn';
 
 function App() {
-  return <div className="App">Hello from Keel</div>;
+  return (
+    <div>
+      <SignIn />
+    </div>
+  );
 }
 
 export default App;
