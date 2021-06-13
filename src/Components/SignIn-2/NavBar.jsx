@@ -21,11 +21,18 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '18px',
     fontWeight: 700,
   },
-  home: {
+  link: {
     marginRight: theme.spacing(4),
     color: 'black',
+    textDecoration: 'none',
     '&:hover': {
       color: '#c32020',
+      textDecoration: 'none',
+    },
+  },
+  buttonLink: {
+    '&:hover': {
+      textDecoration: 'none',
     },
   },
   button: {
@@ -34,10 +41,12 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 700,
     backgroundColor: '#c32020',
     textTransform: 'none',
+    textDecoration: 'none',
     borderRadius: '37px 37px 37px 37px',
     padding: '16px 30px',
     '&:hover': {
       backgroundColor: '#e14646',
+      textDecoration: 'none',
     },
   },
 }));
@@ -46,21 +55,23 @@ function NavBar() {
   const classes = useStyles();
   return (
     <div className="container">
-      <img src={keelLogo} alt="Logo" />
+      <Link className={classes.link} underline="none" href="/">
+        <img src={keelLogo} alt="Logo" />
+      </Link>
       <Typography variant="button" className={clsx(classes.root, classes.text)}>
-        <Link className={classes.home} underline="none" href="/">
+        <Link className={classes.link} href="/">
           Home
         </Link>
-        <Link className={classes.home} underline="none" href="/services">
+        <Link className={classes.link} href="/services">
           Services
         </Link>
-        <Link className={classes.home} underline="none" href="/crs-calculator">
+        <Link className={classes.link} href="/crs-calculator">
           CRS Calculator
         </Link>
-        <Link className={classes.home} underline="none" href="/contact">
+        <Link className={classes.link} href="/contact">
           Contact
         </Link>
-        <Link underline="none" href="/signin">
+        <Link className={classes.buttonLink} href="/signin">
           <Button
             variant="contained"
             color="secondary"
