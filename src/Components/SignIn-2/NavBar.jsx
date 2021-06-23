@@ -1,5 +1,5 @@
 import React from 'react';
-import keelLogo from '../../Assets/keel-logo.jpeg';
+import keelLogo from '../../assets/keel-logo.jpeg';
 import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
