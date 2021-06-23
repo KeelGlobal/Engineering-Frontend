@@ -1,3 +1,7 @@
+body {
+  background-image: radial-gradient(#fae4ea 5%, #fae4ea 15%, #ffffff 60%);
+}
+
 h2 {
   padding-top: 60px;
   margin-right: 55%;

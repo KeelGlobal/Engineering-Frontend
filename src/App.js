@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import SignIn from './Components/SignIn-2/SignIn';
-import NavBar from './Components/SignIn-2/NavBar';
+import SignIn from './Pages/Sign-In/SignIn';
+import NavBar from './Pages/Sign-In/NavBar';
 import PermanentDrawerLeft from './Components/Drawer/Drawer';
+import SignUp from './Pages/Sign-Up/SignUp';
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
         <Route exact path="/login">
           <NavBar />
           <SignIn />
+        </Route>
+        <Route exact path="/sign-up">
+          <SignUp />
         </Route>
         <Route path="/dashboard">
           <PermanentDrawerLeft />
