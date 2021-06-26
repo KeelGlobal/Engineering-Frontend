@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import { SocialIcon } from 'react-social-icons';
 import GoogleLogin from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
+import axios from 'axios';
 
 import './SignIn.css';
 
@@ -90,6 +91,15 @@ function SignIn() {
   };
   function responseGoogle(response) {
     console.log(response)
+    axios.post('https://getkeel.com/api/v1/user/google-login', {
+      "access_token": response.accessToken
+    })
+      .then((resp) => {
+        console.log(resp);
+      })
+      .catch((err) => {
+        console.log(err)
+      });
   }
   function fbResponse(response) {
     console.log(response)
@@ -151,7 +161,7 @@ function SignIn() {
         <IconButton
           className={classes.socialIcons}>
           <GoogleLogin
-            clientId="1233"
+            clientId="194271428747-v7t3bjqu3cea8jq734pd9o950kolco0o.apps.googleusercontent.com"
             buttonText="LOGIN WITH GOOGLE"
             onSuccess={responseGoogle}
             onFailure={responseGoogle}
