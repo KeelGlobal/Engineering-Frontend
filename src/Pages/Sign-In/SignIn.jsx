@@ -5,6 +5,9 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import Button from '@material-ui/core/Button';
 import { SocialIcon } from 'react-social-icons';
+import GoogleLogin from 'react-google-login';
+import FacebookLogin from 'react-facebook-login';
+
 import './SignIn.css';
 
 const useStyles = makeStyles((theme) => ({
@@ -85,7 +88,12 @@ function SignIn() {
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
-
+  function responseGoogle(response) {
+    console.log(response)
+  }
+  function fbResponse(response) {
+    console.log(response)
+  }
   return (
     <div className={classes.root}>
       <div className={classes.wrapper}>
@@ -141,10 +149,13 @@ function SignIn() {
       </h3>
       <div className="icons">
         <IconButton
-          className={classes.socialIcons}
-          onClick={() => console.log('Sign in with google')}
-        >
-          <SocialIcon network="google" />
+          className={classes.socialIcons}>
+          <GoogleLogin
+            clientId="1233"
+            buttonText="LOGIN WITH GOOGLE"
+            onSuccess={responseGoogle}
+            onFailure={responseGoogle}
+          />
         </IconButton>
         <IconButton
           className={classes.socialIcons}
@@ -153,10 +164,13 @@ function SignIn() {
           <SocialIcon network="twitter" />
         </IconButton>
         <IconButton
-          className={classes.socialIcons}
-          onClick={() => console.log('Sign in with facebook')}
-        >
-          <SocialIcon network="facebook" />
+          className={classes.socialIcons}>
+          <FacebookLogin
+            textButton="LOGIN WITH FACEBOOK"
+            appId="319738136533311"
+            fields="name,email,picture"
+            callback={fbResponse}
+          />
         </IconButton>
         <IconButton
           className={classes.socialIcons}

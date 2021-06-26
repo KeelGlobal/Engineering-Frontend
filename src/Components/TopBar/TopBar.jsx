@@ -1,6 +1,6 @@
 import React from 'react';
 import './TopBar.css';
-import KeelLogo from '../../assets/keel-logo.jpeg';
+import KeelLogo from '../../keel-logo.jpeg';
 
 function TopBar() {
   return (
